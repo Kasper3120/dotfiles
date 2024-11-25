@@ -399,5 +399,5 @@ exec chromium
 assign [class="tidal-hifi"] $ws10
 exec tidal-hifi
 
-assign [class="Discord"] $ws3
+assign [class="discord"] $ws3
 exec discord
