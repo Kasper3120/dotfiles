@@ -1,0 +1,51 @@
+backend = "glx"
+shadow = false;
+fading = false;
+
+blur: {
+    method = "gaussian";
+    size = 10;
+    deviation = 3;
+};
+
+wintypes: {
+    menu = {
+        shadow = false;
+        blur-background = false;
+    }
+    dropdown_menu = {
+        shadow = false;
+        blur-background = false;
+    }
+
+    popup_menu = {
+        shadow = false;
+        blur-background = false;
+    }
+
+    tootlip = {
+        shadow = false;
+        blur-background = false;
+    }
+
+    # _GTK_FRAME_EXTENTS@:c = {
+    #     shadow = false;
+    #     blur-background = false;
+    # }
+
+}
+
+rules: ({
+  match = "class_g = 'chromium'"
+  blur-background = false;
+}, {
+  # term
+  match = "(class_g = 'URxvt' || class_g = 'Alacritty')"
+          " && focused";
+  opacity = 0.8;
+}, {
+  match = "(class_g = 'URxvt' || class_g = 'Alacritty')"
+          " && !focused";
+  opacity = 0.6;
+})
+

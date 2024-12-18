@@ -6,6 +6,19 @@ return {
 		options = {
 			mode = "tabs",
 			separator_style = "slant",
+			diagnostics = "nvim_lsp",
+			offsets = {
+				{
+					filetype = "NvimTree",
+					text = "File Explorer",
+					highlight = "Directory",
+				},
+			},
 		},
 	},
 }
+
+--[
+-- tabs up there:
+--
+--]

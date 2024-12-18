@@ -28,3 +28,8 @@ return {
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }
+
+--[[
+--managing <tags> and (pairs)
+--https://github.com/windwp/nvim-autopairs
+--]]

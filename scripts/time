@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+timedatectl | grep Local | awk '{print $3, $4, $5}'

@@ -31,3 +31,8 @@ return {
 		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 	end,
 }
+
+--[[
+-- greeter
+-- https://github.com/goolord/alpha-nvim
+--]]

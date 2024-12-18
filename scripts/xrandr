@@ -1,0 +1,12 @@
+#!/bin/bash
+
+monitors=($(xrandr | grep -Po '^[a-zA-Z0-9\-]+(?=\ con)'))
+
+if [ ${#monitors[@]} -eq 0 ]; then
+    echo "xrandr-script error - no monitors detected"
+    return
+elif [ ${#monitors[@]} --eq 1 ]; then
+    xrandr 
+for monitor in ${monitors[@]}; do
+    echo "monitor: " $monitor
+done

@@ -1,0 +1,12 @@
+#!/bin/bash
+case $BLOCK_BUTTON in
+1) ~/.config/scripts/tidal-cli playpause ;; # left click
+4) ~/.config/scripts/tidal-cli next ;; # scroll up
+5) ~/.config/scripts/tidal-cli previous ;; # scroll down
+esac
+if ~/.config/scripts/tidal-cli status | grep 'paused' >/dev/null; then
+  printf ' ' # fa-pause
+else
+  printf ' ' # fa-play
+fi
+~/.config/scripts/tidal-cli info
