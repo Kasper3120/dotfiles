@@ -3,6 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
@@ -15,6 +16,13 @@ return {
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+		require("mason-tool-installer").setup({
+			ensure_installed = {
+				"java-debug-adapter",
+				"java-test",
+			},
+		})
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -81,9 +89,11 @@ return {
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
 			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
+				if server_name ~= "jdtls" then
+					lspconfig[server_name].setup({
+						capabilities = capabilities,
+					})
+				end
 			end,
 			["svelte"] = function()
 				-- configure svelte server
