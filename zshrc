@@ -127,10 +127,13 @@ alias i3cfg='nvim ~/.config/i3/'
 # ---- Utils ----
 
 alias hostname='cat /etc/hostname'
-
 # ---- TheFuck ----
 eval $(thefuck --alias)
 eval $(thefuck --alias tf)
 
 # --- fzf ----
 eval "$(fzf --zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

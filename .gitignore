@@ -1,4 +1,4 @@
 ./nvim/lazy-lock.json
-./tnux/plugins
-./tnux/plugins/*
+./tmux/plugins
+./tmux/plugins/*
 

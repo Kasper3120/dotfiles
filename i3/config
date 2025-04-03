@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty -o "font.size=9"
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,25 +189,29 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar settings
-bar {
-    # status_command i3status -c /home/$USER/.config/i3/i3status/i3status.conf
-    status_command i3blocks -c /home/$USER/.config/i3/i3blocks/i3blocks.conf
-	i3bar_command i3bar --transparency
-	tray_output none
-	
-	font pango:DejaVuSansM Nerd Font Mono 11
+# bar {
+#     # status_command i3status -c /home/$USER/.config/i3/i3status/i3status.conf
+#     status_command i3blocks -c /home/$USER/.config/i3/i3blocks/i3blocks.conf
+# 	i3bar_command i3bar --transparency
+# 	tray_output none
+# 	
+# 	font pango:DejaVuSansM Nerd Font Mono 11
+#
+# 	colors {
+# 		background $bgcolor
+# 		separator #191919
+# 		#			border		background	text
+# 		focused_workspace	$bgcolor	$bgcolor	$text
+# 		inactive_workspace	$in-bgcolor	$in-bgcolor	$text
+# 		urgent_workspace	$u-bgcolor	$u-bgcolor	$text
+# 	}
+# }
 
-	colors {
-		background $bgcolor
-		separator #191919
-		#			border		background	text
-		focused_workspace	$bgcolor	$bgcolor	$text
-		inactive_workspace	$in-bgcolor	$in-bgcolor	$text
-		urgent_workspace	$u-bgcolor	$u-bgcolor	$text
-	}
-}
+# start polybar
+exec_always /home/$USER/.config/polybar/launch.sh
 
-# lockscreen
+
+# lockscree
 bindsym $mod+shift+x exec /home/$USER/.config/scripts/lock
 
 # fn keys - brightness
@@ -241,7 +245,7 @@ set $tidal ~/.config/scripts/tidal-cli
 # bindsym $mod+ exec $tidal playpause
 
 # screen
-exec_always xrandr --output HDMI-0 --primary --mode 1920x1080 --output DVI-D-0 --mode 1680x1050 --right-of HDMI-0
+exec_always xrandr --output HDMI-1-0 --primary --mode 1920x1080 --output HDMI-4 --mode 1680x1050 --right-of HDMI-1-0
 
 # moving workspaces between screens
 bindsym $mod+shift+p move workspace to output right
@@ -256,21 +260,37 @@ exec --no-startup-id picom -b
 default_border pixel 4
 
 # Color schemes for windows
-set $bgcolor		#56246999
-set $in-bgcolor		#5c49634d
-set $text		    #8df7ad
-set $u-bgcolor		#ed2d3a
-set $indicator		#a8a3c1
-set $in-text		#7e996d
-set $focused-ws		#523d6480
-set $bar-color		#523d640d
-
+# old colorscheme
+# set $bgcolor		#56246999
+# set $in-bgcolor		#5c49634d
+# set $text		    #8df7ad
+# set $u-bgcolor		#ed2d3a
+# set $indicator		#a8a3c1
+# set $in-text		#7e996d
+# set $focused-ws		#523d6480
+# set $bar-color		#523d640d
 #			border		background	text		indicator
-client.focused		$bgcolor	$bgcolor	$text		$indicator
-client.unfocused	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor
-client.focused_inactive	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor
-client.urgent		$u-bgcolor	$u-bgcolor	$text		$u-bgcolor
+# client.focused		$bgcolor	$bgcolor	$text		$indicator
+# client.unfocused	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor
+# client.focused_inactive	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor
+# client.urgent		$u-bgcolor	$u-bgcolor	$text		$u-bgcolor
 
+# gruvbox dark
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
+# class                 border|backgr|text|indicator|child_border
+client.focused          $lightgray $lightgray $bg $purple $darkgray
+client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
+client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
+client.urgent           $red $red $white $red $red
 # default gaps
 gaps inner 15
 gaps outer 5
@@ -398,7 +418,7 @@ mode "$mode_gaps_left" {
 }
 
 # autostart
-exec alacritty -o "font.size=8"
+exec kitty
 
 assign [class="Chromium"] $ws2
 exec chromium
