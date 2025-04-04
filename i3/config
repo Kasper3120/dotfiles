@@ -257,7 +257,8 @@ exec_always feh --bg-scale /home/$USER/.config/i3/wallpaper.jpg
 exec --no-startup-id picom -b
 
 # style for windows
-default_border pixel 4
+default_border pixel 2
+
 
 # Color schemes for windows
 # old colorscheme
@@ -294,6 +295,7 @@ client.urgent           $red $red $white $red $red
 # default gaps
 gaps inner 15
 gaps outer 5
+gaps top 25
 
 # gaps
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
