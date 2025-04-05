@@ -272,7 +272,7 @@ exec --no-startup-id picom -b
 # client.focused_inactive	$in-bgcolor	$in-bgcolor	$in-text	$in-bgcolor
 # client.urgent		$u-bgcolor	$u-bgcolor	$text		$u-bgcolor
 
-# gruvbox dark
+# gruvbox dark colorscheme
 set $bg #282828
 set $red #cc241d
 set $green #98971a
@@ -294,13 +294,11 @@ gaps inner 15
 gaps outer 5
 gaps top 25
 
-smart_gaps on
-
 # style for windows
 default_border pixel 2
 default_floating_border pixel 2
 
-hide_edge_borders both
+hide_edge_borders none
 
 # gaps
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
