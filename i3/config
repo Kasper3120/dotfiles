@@ -256,10 +256,6 @@ exec_always feh --bg-scale /home/$USER/.config/i3/wallpaper.jpg
 # transparent terminal
 exec --no-startup-id picom -b
 
-# style for windows
-default_border pixel 2
-
-
 # Color schemes for windows
 # old colorscheme
 # set $bgcolor		#56246999
@@ -288,14 +284,23 @@ set $gray #a89984
 set $darkgray #1d2021
 set $lightgray #bdae93
 # class                 border|backgr|text|indicator|child_border
-client.focused          $lightgray $lightgray $bg $purple $darkgray
+client.focused          $green $lightgray $bg $purple $green
 client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
 client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
 client.urgent           $red $red $white $red $red
+
 # default gaps
 gaps inner 15
 gaps outer 5
 gaps top 25
+
+smart_gaps on
+
+# style for windows
+default_border pixel 2
+default_floating_border pixel 2
+
+hide_edge_borders both
 
 # gaps
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
