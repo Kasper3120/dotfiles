@@ -251,7 +251,7 @@ exec_always xrandr --output HDMI-1-0 --primary --mode 1920x1080 --output HDMI-4 
 bindsym $mod+shift+p move workspace to output right
 
 # wallpaper
-exec_always feh --bg-scale /home/$USER/.config/i3/wallpaper.jpg
+exec_always feh --bg-scale /home/$USER/.config/i3/wallpaper.png
 
 # transparent terminal
 exec --no-startup-id picom -b
