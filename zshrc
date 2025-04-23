@@ -132,9 +132,14 @@ alias ssh='export TERM=xterm-256color; ssh'
 eval $(thefuck --alias)
 eval $(thefuck --alias tf)
 
-# --- fzf ----
+# ---- fzf ----
 eval "$(fzf --zsh)"
 
+# ---- kubectl ---
+export KUBE_EDITOR=nvim
+
+alias k=kubectl
+alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
