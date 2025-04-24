@@ -140,6 +140,7 @@ export KUBE_EDITOR=nvim
 
 alias k=kubectl
 alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
+alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
