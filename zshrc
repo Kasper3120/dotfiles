@@ -117,17 +117,19 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# ---- Configs ----
+# ---- i3 terminal ----
+export TERMINAL=kitty
 
+# ---- Configs ----
 alias nvimcfg='nvim ~/.config/nvim/'
 alias zshcfg="nvim ~/.zshrc"
 alias tmuxcfg='nvim ~/.config/tmux/'
 alias i3cfg='nvim ~/.config/i3/'
 
 # ---- Utils ----
-
 alias hostname='cat /etc/hostname'
 alias ssh='export TERM=xterm-256color; ssh'
+
 # ---- TheFuck ----
 eval $(thefuck --alias)
 eval $(thefuck --alias tf)
