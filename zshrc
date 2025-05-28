@@ -145,6 +145,10 @@ alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
 
+# ---- xclip ----
+alias clic='xclip -i -sel clip'
+alias cloc='xclip -o -sel clip'
+
 # ---- perl ----
 source $HOME/perl5/perlbrew/etc/bashrc
 PATH="/home/kasper/perl5/bin${PATH:+:${PATH}}"; export PATH;
