@@ -137,12 +137,13 @@ eval $(thefuck --alias tf)
 # ---- fzf ----
 eval "$(fzf --zsh)"
 
-# ---- kubectl ---
+# ---- k8s ----
 export KUBE_EDITOR=nvim
 
 alias k=kubectl
 alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
+alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
 
 # ---- perl ----
 source $HOME/perl5/perlbrew/etc/bashrc
