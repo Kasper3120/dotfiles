@@ -44,6 +44,7 @@ return {
 				"bibtex",
 				"bash",
 				"php",
+				"helm",
 			},
 			incremental_selection = {
 				enable = true,

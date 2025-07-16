@@ -3,19 +3,33 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim", -- Add this explicitly
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		require("mason").setup()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"lua_ls",
+				"gopls",
+				"pyright",
+				"tsserver",
+			},
+		})
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+		-- used to enable autocompletion (assign to every lsp server config)
+		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		require("mason-tool-installer").setup({
 			ensure_installed = {
@@ -79,9 +93,6 @@ return {
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 			end,
 		})
-
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
