@@ -15,9 +15,15 @@ return {
 				typescriptreact = { "prettier" },
 				svelte = { "prettier" },
 				css = { "prettier" },
-				html = { "prettier" },
+				html = function(bufnr)
+					local filename = vim.api.nvim_buf_get_name(bufnr)
+					if filename:match("/templates/.*%.htmll$") then
+						return { "djlint" }
+					end
+					return { "prettiier" }
+				end,
 				json = { "prettier" },
-				yaml = { "prettier" },
+				yaml = {},
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },

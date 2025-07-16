@@ -137,7 +137,7 @@ eval $(thefuck --alias tf)
 # ---- fzf ----
 eval "$(fzf --zsh)"
 
-# ---- kubectl ---
+# ---- k8s ----
 export KUBE_EDITOR=nvim
 
 alias k=kubectl
@@ -145,6 +145,11 @@ alias k=kubectl
 # ---- clarin-old ----
 alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
+alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
+
+# ---- xclip ----
+alias clic='xclip -i -sel clip'
+alias cloc='xclip -o -sel clip'
 
 # ---- clarin-new --- 
 alias oldkcla='kubectl --kubeconfig $HOME/clarin/clarin.yaml'
