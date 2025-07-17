@@ -6,6 +6,9 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
+				helm = {},
+				gotmpl = {},
+				htmldjango = { "djlint" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },

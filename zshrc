@@ -141,6 +141,8 @@ eval "$(fzf --zsh)"
 export KUBE_EDITOR=nvim
 
 alias k=kubectl
+
+# ---- clarin-old ----
 alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
@@ -149,6 +151,16 @@ alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias clic='xclip -i -sel clip'
 alias cloc='xclip -o -sel clip'
 
+# ---- clarin-new --- 
+alias oldkcla='kubectl --kubeconfig $HOME/clarin/clarin.yaml'
+alias oldhcla='helm --kubeconfig $HOME/clarin/clarin.yaml'
+
+# --- velero ---
+alias v=velero
+source <(velero completion zsh)
+complete -F __start_velero v
+alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
+
 # ---- perl ----
 source $HOME/perl5/perlbrew/etc/bashrc
 PATH="/home/kasper/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -156,6 +168,10 @@ PERL5LIB="/home/kasper/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LI
 PERL_LOCAL_LIB_ROOT="/home/kasper/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/kasper/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/kasper/perl5"; export PERL_MM_OPT;
+
+# ---- xclip ----
+alias clin='xclip -i -sel clip'
+alias clot='xclip -o -sel clip'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
