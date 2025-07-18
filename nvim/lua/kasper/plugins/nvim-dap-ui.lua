@@ -167,5 +167,12 @@ return {
 				vmArgs = "" .. "-Xmx2g ",
 			},
 		}
+		-- dap.configurations.htmldjango = {
+		-- 	{
+		-- 		name = "django launch",
+		-- 		type = "python",
+		-- 		args = "runserver",
+		-- },
+		-- }
 	end,
 }
