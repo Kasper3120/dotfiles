@@ -16,7 +16,6 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 -- keymap.set("n", "<C-k>", "<C-w>k")
 -- keymap.set("n", "<C-l>", "<C-w>l")
 
-keymap.set("n", "<leader>e", ":Lex 20<CR>")
 keymap.set("n", "<leader>q", ":wq<CR>")
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab

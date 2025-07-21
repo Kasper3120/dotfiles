@@ -147,10 +147,6 @@ alias kcla='kubectl --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias hcla='helm --kubeconfig $HOME/clarin/clarin-cm.yaml'
 alias vcla='velero --kubeconfig $HOME/clarin/clarin-cm.yaml'
 
-# ---- xclip ----
-alias clic='xclip -i -sel clip'
-alias cloc='xclip -o -sel clip'
-
 # ---- clarin-new --- 
 alias oldkcla='kubectl --kubeconfig $HOME/clarin/clarin.yaml'
 alias oldhcla='helm --kubeconfig $HOME/clarin/clarin.yaml'

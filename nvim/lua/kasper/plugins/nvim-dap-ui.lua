@@ -167,5 +167,56 @@ return {
 				vmArgs = "" .. "-Xmx2g ",
 			},
 		}
+		dap.configurations.python = {
+			{
+				name = "FastAPI (Uvicorn Debug)",
+				type = "python",
+				request = "launch",
+				module = "uvicorn",
+				args = {
+					"app.main:app", -- Your FastAPI app import path (e.g., `main.py` with `app = FastAPI()`)
+					"--host",
+					"0.0.0.0", -- Bind to all interfaces
+					"--port",
+					"8000", -- Port
+					"--reload", -- Auto-reload (optional)
+					-- "--debug", -- Debug mode
+				},
+				jinja = true, -- Enable Jinja2 debugging
+				justMyCode = false, -- Debug into libraries
+				env = {
+					PYTHONPATH = "${workspaceFolder}", -- Fix imports
+					DEBUG = "true", -- Custom env var
+				},
+			},
+			{
+				name = "Attach to Uvicorn (5678)",
+				type = "python",
+				request = "attach",
+				connect = {
+					host = "localhost",
+					port = 5678, -- Must match Uvicorn's `--debug-port`
+				},
+				pathMappings = {
+					{
+						localRoot = "${workspaceFolder}",
+						remoteRoot = ".", -- Adjust for containers
+					},
+				},
+			},
+			{
+				name = "FastAPI (Full Debug)",
+				type = "python",
+				request = "launch",
+				program = "-m",
+				args = {
+					"uvicorn",
+					"app.main:app",
+					"--port",
+					"8000",
+				},
+				subProcess = true, -- Debug background tasks
+			},
+		}
 	end,
 }
