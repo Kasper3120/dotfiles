@@ -21,7 +21,6 @@ return {
 				"lua_ls",
 				"gopls",
 				"pyright",
-				"tsserver",
 			},
 		})
 

@@ -11,8 +11,8 @@ return {
 		render_markdown.setup({})
 
 		-- togle render markdown in a buffer
-		vim.keymap.set("n", "<leader>mt", render_markdown.buf_toggle())
+		vim.keymap.set("n", "<leader>mt", render_markdown.buf_toggle)
 		-- togle render markdown globally
-		vim.keymap.set("n", "<leader>mT", render_markdown.toggle())
+		vim.keymap.set("n", "<leader>mT", render_markdown.toggle)
 	end,
 }
