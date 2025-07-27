@@ -4,6 +4,7 @@ return {
 	config = function()
 		local conform = require("conform")
 
+		vim.b.disable_autoformat = true
 		conform.setup({
 			formatters_by_ft = {
 				helm = {},
