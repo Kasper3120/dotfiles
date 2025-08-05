@@ -424,13 +424,13 @@ mode "$mode_gaps_left" {
 }
 
 # autostart
-exec kitty
+exec kitty tmux
 
 assign [class="Chromium"] $ws2
 exec chromium
 
 assign [class="tidal-hifi"] $ws10
-exec tidal-hifi
+# exec tidal-hifi
 
 assign [class="discord"] $ws9
 exec discord
